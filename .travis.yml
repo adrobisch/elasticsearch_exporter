@@ -5,11 +5,6 @@ go:
   - tip
 
 script:
-  - make style
-  - make vet
-  - make gometalinter
-  - make build
-  - make test
   - docker build -t adrobisch/elasticsearch_exporter .
   - echo $DOCKER_TOKEN | docker login --username adrobisch --password-stdin
   - docker push adrobisch/elasticsearch_exporter:latest
